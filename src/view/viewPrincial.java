@@ -2,8 +2,6 @@
 package view;
 
 import control.ordenaçãoControl;
-import java.util.Set;
-
 /**
  *
  * @author jjao
@@ -36,6 +34,8 @@ public class viewPrincial extends javax.swing.JFrame {
         boubbleB = new javax.swing.JRadioButton();
         selectionB = new javax.swing.JRadioButton();
         mergeB = new javax.swing.JRadioButton();
+        vetorSelection = new javax.swing.JLabel();
+        vetorMerge = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(204, 204, 255));
 
@@ -104,8 +104,17 @@ public class viewPrincial extends javax.swing.JFrame {
 
         selectionB.setText("Selection");
 
-        mergeB.setText("Inserion");
+        mergeB.setText("Merge");
         mergeB.setActionCommand("Merge");
+        mergeB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mergeBActionPerformed(evt);
+            }
+        });
+
+        vetorSelection.setText("se");
+
+        vetorMerge.setText("me");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -119,8 +128,10 @@ public class viewPrincial extends javax.swing.JFrame {
                         .addGap(16, 16, 16)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(vetorBoubble)
-                            .addComponent(vetorInsertion))
-                        .addGap(0, 400, Short.MAX_VALUE))
+                            .addComponent(vetorInsertion)
+                            .addComponent(vetorSelection)
+                            .addComponent(vetorMerge))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -174,7 +185,11 @@ public class viewPrincial extends javax.swing.JFrame {
                         .addComponent(vetorInsertion)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(vetorBoubble)
-                        .addGap(139, 139, 139))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(vetorSelection)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(vetorMerge)
+                        .addGap(83, 83, 83))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(boubbleB)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -200,16 +215,12 @@ public class viewPrincial extends javax.swing.JFrame {
         
             TempoInicial = System.nanoTime();
             int [] resultado = o.oInsertion() ; //ORDENAÇÃO
-            TempoFinal = (System.nanoTime()) - TempoInicial;
-            
-            StringBuilder stringArray = new StringBuilder();
-            for (int k: resultado){
-                stringArray.append(k+" ");
-            }
-            vetorInsertion.setText("Insertion: [ "+stringArray.toString()+"];"
-                    + " Execução em: " +Double.toString(TempoFinal)+" nanossegundos. (On²)");
+            TempoFinal = (System.nanoTime()) - TempoInicial; //TEMPO (ns)
+          
+            vetorInsertion.setText("Insertion: [ "+(o.parseString(resultado)).toString()+"];"
+                    + " Execução: " +Double.toString(TempoFinal)+" nanossegundos. (On²)");
         }
-        else if (insertionB.isSelected() == false){
+        else{
             vetorInsertion.setText("");
         }
         
@@ -217,18 +228,41 @@ public class viewPrincial extends javax.swing.JFrame {
         if (boubbleB.isSelected() == true){ //BOUBBLE SORT
         
             TempoInicial = System.nanoTime();
-            int [] resultado = o.oBoubble() ; //ORDENAÇÃO
-            TempoFinal = (System.nanoTime()) - TempoInicial;
+            int [] resultadoB = o.oBoubble() ; //ORDENAÇÃO
+            TempoFinal = (System.nanoTime()) - TempoInicial; //TEMPO (ns)
             
-            StringBuilder stringArrayB = new StringBuilder();
-            for (int k: resultado){
-                stringArrayB.append(k+" ");
-            }
-            vetorBoubble.setText("Boubble: [ "+stringArrayB.toString()+"];"
-                    + " Execução em: " +Double.toString(TempoFinal)+" nanossegundos. (On²)");
+            vetorBoubble.setText("Boubble: [ "+o.parseString(resultadoB).toString()+"];"
+                    + " Execução: " +Double.toString(TempoFinal)+" nanossegundos. O(n²) ");
         }
-        else if (boubbleB.isSelected() == false){
+        else{
             vetorBoubble.setText("");
+        }
+        //////////////////////////////////////////////////////////////////////////////////////////      
+        if (selectionB.isSelected() == true){ //SELECTION SORT
+        
+            TempoInicial = System.nanoTime();
+            int [] resultadoS = o.oSelection() ; //ORDENAÇÃO
+            TempoFinal = (System.nanoTime()) - TempoInicial; //TEMPO (ns)
+            
+            vetorSelection.setText("Selection: [ "+o.parseString(resultadoS).toString()+"];"
+                    + " Execução: " +Double.toString(TempoFinal)+" nanossegundos. O(n²)");
+        }
+        else{
+            vetorSelection.setText("");
+        }
+        
+        //////////////////////////////////////////////////////////////////////////////////////////      
+        if (mergeB.isSelected() == true){ //MERGE SORT
+        
+            TempoInicial = System.nanoTime();
+            int [] resultadoM = o.oMerge() ; //ORDENAÇÃO
+            TempoFinal = (System.nanoTime()) - TempoInicial; //TEMPO (ns)
+            
+            vetorMerge.setText("Merge: [ "+o.parseString(resultadoM).toString()+"];"
+                    + " Execução: " +Double.toString(TempoFinal)+" nanossegundos. O(n log n)");
+        }
+        else{
+            vetorMerge.setText("");
         }
         
         
@@ -253,6 +287,10 @@ public class viewPrincial extends javax.swing.JFrame {
     private void insertionBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insertionBActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_insertionBActionPerformed
+
+    private void mergeBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mergeBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mergeBActionPerformed
 
     /**
      * @param args the command line arguments
@@ -305,5 +343,7 @@ public class viewPrincial extends javax.swing.JFrame {
     private javax.swing.JRadioButton selectionB;
     private javax.swing.JLabel vetorBoubble;
     private javax.swing.JLabel vetorInsertion;
+    private javax.swing.JLabel vetorMerge;
+    private javax.swing.JLabel vetorSelection;
     // End of variables declaration//GEN-END:variables
 }

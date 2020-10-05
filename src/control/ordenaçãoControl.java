@@ -33,13 +33,19 @@ public class ordenaçãoControl {
     public int[] getVetor() {
         return vetor;
     }
+    public StringBuilder parseString(int[] vetor){
+        StringBuilder stringArray = new StringBuilder();
+        for (int k: vetor){
+                stringArray.append(k+" ");
+            }
+        return stringArray;
+    }
     
-
     public void setIn(insertion in) {
         this.in = in;
     }
 
-     
+    
     public String getVetorString() {
         return vetorString;
     }
@@ -52,5 +58,15 @@ public class ordenaçãoControl {
         bb = new boubble(this.vetor);
         bb.ordenarBoubble(this.vetor);
         return bb.Numeros();
+    }
+    public int [] oSelection(){
+        se = new selection(this.vetor);
+        se.ordenarSelection(this.vetor);
+        return se.Numeros();
+    }
+    public int [] oMerge(){
+        me = new merge(this.vetor);
+        me.ordenarMerge(this.vetor);
+        return me.Numeros();
     }
 }

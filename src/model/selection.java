@@ -16,4 +16,17 @@ public class selection {
         return numeros;
     }
     
+    public int[] ordenarSelection(int [] numeros){
+        for (int i = 0; i<numeros.length;i++){
+            int Indexmin = i;
+            for (int j = i+1; j < numeros.length;j++){
+                if(numeros[Indexmin]>numeros[j]){
+                    Indexmin = j;
+                }
+            }    
+        }
+        this.numeros = numeros;
+        return this.numeros;
+    }
+   
 }
