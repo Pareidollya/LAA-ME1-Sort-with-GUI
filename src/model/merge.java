@@ -1,11 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package model;
 
-
+/**
+ *
+ * @author jj
+ */
 public class merge {
     private int [] vetor;
         public merge(int[]vetor){
@@ -57,6 +56,7 @@ public class merge {
         m = m + 1;
       }
     }
+    
     while(i < meio) {
       novoVetor[pos] = vetor[i];
       pos = pos + 1;
@@ -68,7 +68,7 @@ public class merge {
       pos = pos + 1;
       m = m + 1;
     }
-    
+ 
     for(pos = 0, i = inicio; i < fim; i++, pos++) {
       vetor[i] = novoVetor[pos];
     }

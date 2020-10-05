@@ -57,8 +57,6 @@ public class viewPrincial extends javax.swing.JFrame {
             }
         });
 
-        vetorInsertion.setText("in");
-
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -77,8 +75,6 @@ public class viewPrincial extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
         );
-
-        vetorBoubble.setText("bb");
 
         insertionCheck.setToolTipText("");
 
@@ -105,16 +101,11 @@ public class viewPrincial extends javax.swing.JFrame {
         selectionB.setText("Selection");
 
         mergeB.setText("Merge");
-        mergeB.setActionCommand("Merge");
         mergeB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mergeBActionPerformed(evt);
             }
         });
-
-        vetorSelection.setText("se");
-
-        vetorMerge.setText("me");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -179,7 +170,7 @@ public class viewPrincial extends javax.swing.JFrame {
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(limpar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
                         .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(vetorInsertion)

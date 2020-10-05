@@ -98,7 +98,7 @@
                       <Component id="jButton1" min="-2" pref="37" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="limpar" min="-2" pref="37" max="-2" attributes="0"/>
-                      <EmptySpace pref="55" max="32767" attributes="0"/>
+                      <EmptySpace pref="119" max="32767" attributes="0"/>
                       <Component id="jSeparator2" min="-2" pref="10" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="vetorInsertion" min="-2" max="-2" attributes="0"/>
@@ -150,9 +150,6 @@
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="vetorInsertion">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="in"/>
-      </Properties>
     </Component>
     <Container class="javax.swing.JPanel" name="jPanel1">
       <Properties>
@@ -191,9 +188,6 @@
       </SubComponents>
     </Container>
     <Component class="javax.swing.JLabel" name="vetorBoubble">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="bb"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="insertionCheck">
       <Properties>
@@ -240,21 +234,14 @@
     <Component class="javax.swing.JRadioButton" name="mergeB">
       <Properties>
         <Property name="text" type="java.lang.String" value="Merge"/>
-        <Property name="actionCommand" type="java.lang.String" value="Merge"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mergeBActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="vetorSelection">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="se"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="vetorMerge">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="me"/>
-      </Properties>
     </Component>
   </SubComponents>
 </Form>
