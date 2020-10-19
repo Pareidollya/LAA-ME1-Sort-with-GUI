@@ -12,6 +12,12 @@ public class insertion {
     }
     
     public int [] ordenarInsertion (int[] numeros){
+        
+        if (numeros.length < 2){
+            this.numeros = numeros;
+            return this.numeros;
+        }
+        
         for (int i = 1; i < numeros.length;i++ ){
             
             int j = i;

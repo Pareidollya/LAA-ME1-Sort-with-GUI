@@ -268,6 +268,8 @@ public class viewPrincial extends javax.swing.JFrame {
 
         vetorInsertion.setText("");
         vetorBoubble.setText("");
+        vetorSelection.setText("");
+        vetorMerge.setText("");
         insertionB.setSelected(false);
         boubbleB.setSelected(false);
         selectionB.setSelected(false);

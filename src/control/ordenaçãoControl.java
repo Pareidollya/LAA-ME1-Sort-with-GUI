@@ -66,7 +66,7 @@ public class ordenaçãoControl {
     }
     public int [] oMerge(){
         me = new merge(this.vetor);
-        me.ordenarMerge(this.vetor);
+        me.ordenarMerge(this.vetor,0,this.vetor.length-1);
         return me.Numeros();
     }
 }

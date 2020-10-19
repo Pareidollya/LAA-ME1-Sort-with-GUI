@@ -16,6 +16,12 @@ public class boubble {
     }
     
     public int [] ordenarBoubble(int[]numeros){
+        
+        if (numeros.length < 2){
+            this.numeros = numeros;
+            return this.numeros;
+            
+        }
         for (int i = 0 ;i < numeros.length-1; i++){
             for (int j = 0; j< (numeros.length-1)-i;j++){
                 if (numeros[j] > numeros[j+1]){
